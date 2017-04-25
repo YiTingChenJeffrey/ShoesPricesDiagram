@@ -23,27 +23,14 @@ function search(keywords, func) {
         // add additional fields
         outputSelector: ['PictureURLSuperSize'],
 
-        unitPrice: ['UnitType'],
-
         paginationInput: {
-            entriesPerPage: 10
+            entriesPerPage: 100
         },
-
-        itemFilter: [
-            {
-                name: 'FreeShippingOnly',
-                value: true
-            },
-            {
-                name: 'MaxPrice',
-                value: '150'
-            }
-  ],
 
         domainFilter: [
             {
                 name: 'domainName',
-                value: 'Digital_Cameras'
+                value: 'basketballshoes'
             }
   ]
     };
@@ -63,12 +50,11 @@ function search(keywords, func) {
 
             var items = itemsResponse.searchResult.item;
             func(items);
-//            console.log('Found', items.length, 'items');
-//            console.log(items[0]);
-//        it = items[0];
-            //    for (var i = 0; i < items.length; i++) {
-            //      console.log('- ' + items[i].title);
-            //    }  
+            console.log('Found', items.length, 'items');
+            it = items[0];
+            for (var i = 0; i < items.length; i++) {
+                    console.log(items[i]);
+            }  
         }
     );
     return it;
@@ -123,19 +109,28 @@ server.route({
     handler:function(request, reply){
 //        console.log("Result:\n");
         search("Curry one", function(d){
-            reply(JSON.stringify(d[0]));
+            reply(JSON.stringify(d));
         });
     }
 }
 );
 
 server.route({
-    method: 'GET',
-    path: '/curry1',
-    handler: {
-        view: {
-            template: 'listshoes'
-        }
+    method: 'POST',
+    path: '/form',
+    handler: function(request,reply){
+        var shoename = request.payload.search;
+        console.log(shoename);
+        search(shoename, function(d){
+            reply.view('listshoes',{
+            shoename:JSON.stringify(d)
+        });
+        
+        
+        //console.log("Result:\n");
+//        search("Curry one", function(d){
+//            reply(JSON.stringify(d));
+        });
     }
 });
 
@@ -146,8 +141,7 @@ server.route({
         directory: {
             path: './',
             listing: true,
-            index: false,
-            redirectToSlash: true
+            index: false
         }
     }
 });
