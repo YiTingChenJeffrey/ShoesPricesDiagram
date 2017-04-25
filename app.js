@@ -24,7 +24,7 @@ function search(keywords, func) {
         outputSelector: ['PictureURLSuperSize'],
 
         paginationInput: {
-            entriesPerPage: 100
+            entriesPerPage: 1
         },
 
         domainFilter: [
@@ -122,8 +122,10 @@ server.route({
         var shoename = request.payload.search;
         console.log(shoename);
         search(shoename, function(d){
+            var shoeshoe = JSON.stringify(d);
+            var parsing = JSON.parse(shoeshoe);
             reply.view('listshoes',{
-            shoename:JSON.stringify(d)
+            shoename: parsing
         });
         
         
