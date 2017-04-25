@@ -1,0 +1,26 @@
+{
+  "name": "dinostory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.3.0",
+    "blipp": "^2.3.0",
+    "chai": "^3.5.0",
+    "debug": "^2.6.4",
+    "ebay-api": "^1.13.1",
+    "handlebars": "^4.0.6",
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0",
+    "vision": "^4.1.1",
+    "xml": "^1.0.1",
+    "xml2js": "^0.4.17"
+  }
+}
