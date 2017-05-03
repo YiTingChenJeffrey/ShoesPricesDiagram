@@ -1,21 +1,54 @@
 <div class = "col-sm-12"><p><br></p></div>
 
 {{#if shoename}}
+{{#one shoename}}
 <div class = "col-sm-6 fontsize">
-<div class = "col-sm-12">{{shoename.title}}</div>
-<div class = "col-sm-12"><p><br></p></div>
-<div class = "col-sm-10"><img src="{{shoename.pictureURLSuperSize}}"></div>
-</div>
+<div class = "col-sm-12 text">{{title}}</div>
+<div class = "col-sm-10 img"><img src="{{pictureURLLarge}}"></div>
+{{/one}}
 {{/if}}
 
+<div class = "col-sm-12" id="pricerange" class = "priceRange">Price Range: {{min}} - {{max}}</div>
 
-<!--
-{{formresponse.term}} <br>
-{{formresponse.studentname}} <br>
-{{formresponse.storename}} <br>
-{{formresponse.storeaddress}} <br>
-{{formresponse.storecity}} <br>
-{{formresponse.storestate}} <br>
-{{formresponse.storeowner}} <br>
-{{formresponse.otherInfo}} <br>
--->
+
+</div>
+
+
+<canvas class = "col-sm-6" id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+    
+var dataset = {{priceData}};
+var dataset1 = dataset.reverse();
+   
+var ot = '{{overTime}}';
+    ot = ot.replace(/&quot;/gi,'"');
+
+    
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: JSON.parse(ot).reverse(),
+        datasets: [{
+            label: 'Sneakers Prices Over Time',
+            data: dataset,
+            backgroundColor: [
+                'rgba(0, 0, 0, 0)'
+            ],
+            borderColor: [
+                'rgba(0,0,0,100)',
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
