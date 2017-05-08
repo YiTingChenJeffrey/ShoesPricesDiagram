@@ -1,5 +1,6 @@
 SHOES PRICES DIAGRAM
-
+<img src = "3.png">
+<br>
 The name for this final project is called "shoes price disgram". I created this website especially for sneakers lovers. They can type the sneaker name they want to search for. Then, the website will show a list of informations, including name, photo, price range and diagram. The diagram presents 30 recently sneakers that are sold. You can see the price trend for that sneakers and decide when you should buy or sell the sneaker.  
 
 Here is the link to my project :  https://shoeprices.herokuapp.com/
@@ -46,3 +47,9 @@ ebay.xmlRequest({
 );
 <br>
 ```
+<b>Fouth</b> Filter for the item you want to search for. The following is the example of my work<br>
+<img src = "1.png">
+<img src = "2.png">
+<br>
+<b>Note</b>
+Ebay has a very large collection of API. You can find anything you want by filtering. It has a limitation of 5000 search per day if you use a free ebay account. 
