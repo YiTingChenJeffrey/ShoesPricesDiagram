@@ -4,7 +4,7 @@ The name for this final project is called "shoes price disgram". I created this 
 
 Here is the link to my project :  https://shoeprices.herokuapp.com/
 
-Journal Entries
+Journal Entries<br>
 04/06/2017 Researched For Ideas. Looked For API. I decided to do a price comparison site for sneakers.<br>
 04/13/2017 Working with Ebay-API. Tried to grab information from ebay-api <br>
 04/20/2017 Built the layout of the site using node.js <br>
