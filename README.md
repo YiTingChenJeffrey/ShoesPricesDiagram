@@ -16,12 +16,13 @@ Here is the link to my project :  https://shoeprices.herokuapp.com/
 
 <b>First</b>, create a layout of the website using node.js<br>
 <b>Second</b>, type the following code using terminal<br>
-```
-  npm install ebay-api
+
+  npm install ebay-api<br>
   var ebay = require('ebay-api');
-```
+
 <br>
 <b>Third</b>, Makes an XML POST to an eBay API endpoints.<br>
+
 ```
 ebay.xmlRequest({
     serviceName: 'Finding',
